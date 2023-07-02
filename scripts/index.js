@@ -1,5 +1,5 @@
 const baseUrl = `https://www.googleapis.com/youtube/v3`;
-const apiKey = `AIzaSyBloCsNf3VgcrbM1tDiplWc3x18tJMI9hI`;
+const apiKey = `AIzaSyA9KCKKSGpn2ucrPaakeOyh6vieBh2Ae0s`;
 
 mainContainer = document.getElementById("main-container");
 
@@ -58,6 +58,8 @@ function renderVideoCard(videoList){
                                     `
     }
 }
+
+getVideos("");
 
 function openVideoDetails(videoId){
     localStorage.setItem("videoId",videoId)
