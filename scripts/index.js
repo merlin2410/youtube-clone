@@ -40,7 +40,8 @@ function renderVideoCard(videoList){
     for(let i=0;i<videoList.length;i++){
         videoDetails = videoList[i];
         console.log(videoDetails)
-        mainContainer.innerHTML += `<div class="video-card">
+        mainContainer.innerHTML += `<a href="videoDetails.html">
+                                        <div class="video-card">
                                         <img class="thumbnail" src="${videoDetails.snippet.thumbnails.default.url}" alt="thumbnail">
                                         <div class="description">
                                             
@@ -52,7 +53,8 @@ function renderVideoCard(videoList){
                                             </div>
                                         </div>
                                         
-                                    </div>`
+                                        </div>
+                                    </a>`
     }
 }
 
