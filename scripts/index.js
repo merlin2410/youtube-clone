@@ -1,5 +1,5 @@
 const baseUrl = `https://www.googleapis.com/youtube/v3`;
-const apiKey = `AIzaSyCnqHbJgWTTe4NZo_Fq3KxnP1BC3mNZt1Y`;
+const apiKey = `AIzaSyAEwL1eIor7nqinmj8SME7BlN6wQbr56pY`;
 
 mainContainer = document.getElementById("main-container");
 
@@ -40,8 +40,9 @@ function renderVideoCard(videoList){
     for(let i=0;i<videoList.length;i++){
         videoDetails = videoList[i];
         console.log(videoDetails)
-        mainContainer.innerHTML += `<a href="videoDetails.html">
-                                        <div class="video-card">
+        console.log(videoDetails.id)
+        mainContainer.innerHTML += `
+                                        <div class="video-card" onclick="openVideoDetails('${videoDetails.id}')">
                                         <img class="thumbnail" src="${videoDetails.snippet.thumbnails.default.url}" alt="thumbnail">
                                         <div class="description">
                                             
@@ -54,8 +55,13 @@ function renderVideoCard(videoList){
                                         </div>
                                         
                                         </div>
-                                    </a>`
+                                    `
     }
+}
+
+function openVideoDetails(videoId){
+    localStorage.setItem("videoId",videoId)
+    window.open("/videoDetails.html");
 }
 
 getVideos();

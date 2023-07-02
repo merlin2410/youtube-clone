@@ -2,5 +2,24 @@
     position: fixed;
     top: 70px;
     left: 205px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 
+}
+
+.video-description{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.views-likes{
+    display: flex;
+    justify-content: space-between;
+}
+
+.likes{
+    display: flex;
+    align-items: center;
 }
