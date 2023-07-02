@@ -14,6 +14,7 @@
     width: 200px;
     left: 5px;
     border: 1px solid black;
+    display: none;
 }
 
 .categories{
@@ -51,7 +52,7 @@
 }
 
 .main-container{
-    position: fixed;
+    position: relative;
     width: 1300px;
     height: 1000px;
     top: 125px;
