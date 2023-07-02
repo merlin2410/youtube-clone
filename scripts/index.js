@@ -39,7 +39,7 @@ function renderVideoCard(videoList){
     mainContainer.innerHTML = '';
     for(let i=0;i<videoList.length;i++){
         videoDetails = videoList[i];
-        console.log(i)
+        console.log(videoDetails)
         mainContainer.innerHTML += `<div class="video-card">
                                         <img class="thumbnail" src="${videoDetails.snippet.thumbnails.default.url}" alt="thumbnail">
                                         <div class="description">
@@ -47,7 +47,7 @@ function renderVideoCard(videoList){
                                             <img class="channel-icon" id="img" draggable="false" class="style-scope yt-img-shadow" alt="" width="48" src="https://yt3.ggpht.com/ytc/AGIKgqOpJFsx4eSX_dz9DoHq5sr-cPLpC6pZDS-c6nJtvg=s68-c-k-c0x00ffffff-no-rj">
                                             
                                             <div>
-                                                <p>${videoDetails.snippet.title}</p>
+                                                <h4>${videoDetails.snippet.title}</h4>
                                                 <p>${videoDetails.snippet.channelTitle}. 1 week ago</p>
                                             </div>
                                         </div>
