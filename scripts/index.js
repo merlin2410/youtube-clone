@@ -1,13 +1,13 @@
 const baseUrl = `https://www.googleapis.com/youtube/v3`;
-const apiKey = `AIzaSyAEwL1eIor7nqinmj8SME7BlN6wQbr56pY`;
+const apiKey = `AIzaSyBloCsNf3VgcrbM1tDiplWc3x18tJMI9hI`;
 
 mainContainer = document.getElementById("main-container");
 
 console.log(mainContainer)
 
 
-async function getVideos(){
-    response = await fetch(`${baseUrl}/search?key=${apiKey}&maxResults=20`);
+async function getVideos(q){
+    response = await fetch(`${baseUrl}/search?key=${apiKey}&q=${q}&maxResults=20`);
     data = await response.json();
     videos = await data.items;
     
@@ -64,4 +64,16 @@ function openVideoDetails(videoId){
     window.open("/videoDetails.html");
 }
 
-getVideos();
+
+searchArea = document.getElementById("search-element");
+let q = "";
+searchArea.addEventListener("input",(e)=>{
+    q = e.target.value;
+    
+})
+
+searchButton = document.getElementById("search-button");
+console.log(searchButton)
+searchButton.addEventListener("click",(e)=>{
+    getVideos(q);
+});
